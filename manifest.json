@@ -13,11 +13,22 @@
         "48": "icons/border-48.png"
     },
 
+    // Toolbar Button
     "browser_action": {
         "browser_style": true,
         "default_icon": "icons/border-48.png",
         "default_title": "TabSaver",
         "default_popup": "popup/menu.html"
+    },
+
+    // Sidebar Page
+    "sidebar_action": {
+        "default_icon": {
+            "48": "icons/border-48.png"
+        },
+        "default_panel": "sidebar/sidebar.html",
+        "open_at_install": false,
+        "browser_style": true
     },
 
     "applications": {
