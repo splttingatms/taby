@@ -15,10 +15,7 @@
 
     // Toolbar Button
     "browser_action": {
-        "browser_style": true,
-        "default_icon": "icons/border-48.png",
-        "default_title": "TabSaver",
-        "default_popup": "popup/menu.html"
+        "default_icon": "icons/border-48.png"
     },
 
     // Sidebar Page
@@ -29,6 +26,10 @@
         "default_panel": "sidebar/sidebar.html",
         "open_at_install": false,
         "browser_style": true
+    },
+
+    "background": {
+        "scripts": ["background-script.js"]
     },
 
     "applications": {
