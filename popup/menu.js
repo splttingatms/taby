@@ -6,7 +6,7 @@ function logError(error) {
 function saveText(text, filename, mimeType, charset) {
     var content = encodeURIComponent(text);
     var dataUri = `data:${mimeType};charset=${charset},${content}`;
-    
+
     var downloader = document.createElement("a");
     downloader.setAttribute("href", dataUri);
     downloader.setAttribute("download", filename);
