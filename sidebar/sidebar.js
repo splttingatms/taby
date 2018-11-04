@@ -42,15 +42,47 @@ function exportTabs() {
 
 function importTabs() {
     console.debug("importTabs executed");
-    alert("feature coming soon...");
+    document.getElementById("file-selector").click();
 }
 
-document.addEventListener("click", (e) => {
-    if (e.target.id === "tabs-export") {
-        exportTabs();
+function handleFiles() {
+    if (!this.files || this.files.length < 1) {
+        console.warning("no files selected");
     }
 
-    if (e.target.id === "tabs-import") {
-        importTabs();
+    // only process the first file selected
+    var file = this.files[0];
+    console.debug(`file: ${file}`);
+    console.debug(`prop: ${file.name}`);
+    console.debug(`prop: ${file.size}`);
+    console.debug(`prop: ${file.type}`);
+
+    if (!file.type.match("application/json")) {
+        alert("don't understand file");
     }
-});
+
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        console.debug("reader loaded");
+        console.debug(`event: ${JSON.stringify(event)}`);
+        console.debug(`event: ${event}`);
+        console.debug(`content: ${reader.result}`);
+    };
+    reader.readAsText(file);
+}
+
+// Must wait for the content to finish loading before IDs become available
+window.onload = function() {
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "tabs-export") {
+            exportTabs();
+        }
+
+        if (e.target.id === "tabs-import") {
+            importTabs();
+        }
+    });
+
+    var fileSelector = document.getElementById("file-selector");
+    fileSelector.addEventListener("change", handleFiles, false);
+}
