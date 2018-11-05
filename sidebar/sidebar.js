@@ -26,7 +26,7 @@ function saveObjectAsJson(object, filename) {
 
 function saveTabs(tabs) {
     console.debug("tabs: " + tabs.length);
-    saveObjectAsJson(tabs, "tabs.txt");
+    saveObjectAsJson(tabs, "tabs.json");
 }
 
 function getAllTabs() {
@@ -58,15 +58,25 @@ function handleFiles() {
     console.debug(`prop: ${file.type}`);
 
     if (!file.type.match("application/json")) {
+        // todo: handle error case better
         alert("don't understand file");
+        return;
     }
 
     var reader = new FileReader();
     reader.onload = function(event) {
-        console.debug("reader loaded");
-        console.debug(`event: ${JSON.stringify(event)}`);
-        console.debug(`event: ${event}`);
-        console.debug(`content: ${reader.result}`);
+        console.debug("file read");
+
+        var jsonContent = reader.result;
+        var tabs = JSON.parse(jsonContent);
+        for (var i = 0; i < tabs.length; i++) {
+            console.debug(`url: ${tabs[i].url}`);
+            var tab = tabs[i];
+            // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/create
+            browser.tabs.create({
+                url: tab.url
+            }).catch(logError); // todo: report error to user
+        }
     };
     reader.readAsText(file);
 }
