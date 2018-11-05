@@ -1,5 +1,5 @@
 function logError(error) {
-    console.error("Error: ${error}");
+    console.error(`Error: ${error}`);
 }
 
 // https://stackoverflow.com/questions/11336663/how-to-make-a-browser-display-a-save-as-dialog-so-the-user-can-save-the-conten
