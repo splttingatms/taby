@@ -5,28 +5,19 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/common/common.css">
         <script src="/common/common.js"></script>
     </head>
     <body>
-        <div class="panel-section panel-section-header">
-            <div class="text-section-header">Taby</div>
-        </div>
+        <h1>Taby</h1>
 
-        <div class="panel-section panel-section-list">
-            <div class="panel-list-item">
-                <div class="icon"></div>
-                <div id="tabs-export" class="text">Export</div>
-                <div class="text-shortcut"></div>
-            </div>
-
-            <div class="panel-list-item">
-                <div class="icon"></div>
-                <div id="tabs-import" class="text">Import</div>
-                <div class="text-shortcut"></div>
-
-                <input id="file-selector" type="file" class="ts-hidden" />
-            </div>
-        </div>
+        <p>
+            <button id="tabs-export" class="text">Export</button>
+        </p>
+        <p>
+            <button id="tabs-import" class="text">Import</button>
+            <input id="file-selector" type="file" class="ts-hidden" />
+        </p>
     </body>
 </html>
