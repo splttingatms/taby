@@ -18,3 +18,9 @@ Official documentation can be found here: [Temporary Installation in Firefox](ht
 
 1. Open Firefox and enter "about:debugging" in the URL bar.
 1. Click "Load Temporary Add-on" and select any file inside the extension's directory.
+
+### Publish
+Overall steps can be found here: [Submitting an Add-On](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/Distribution/Submitting_an_add-on)
+
+1. Package the extension [docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/web-ext_command_reference#web-ext_build): `web-ext build`
+1. Upload to AMO following the form: https://addons.mozilla.org/en-US/developers/addons
