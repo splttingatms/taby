@@ -23,4 +23,4 @@ Official documentation can be found here: [Temporary Installation in Firefox](ht
 Overall steps can be found here: [Submitting an Add-On](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/Distribution/Submitting_an_add-on)
 
 1. Package the extension [docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/web-ext_command_reference#web-ext_build): `web-ext build`
-1. Upload to AMO following the form: https://addons.mozilla.org/en-US/developers/addons
+1. Upload to AMO following the form: https://addons.mozilla.org/en-US/developers/addon/taby/
