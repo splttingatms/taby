@@ -1,9 +1,19 @@
-# taby
+# Taby
 A WebExtension for saving and restoring tabs.
 
-## Developing
+## Development
 
 ### Firefox
+
+#### Method 1 (Recommended): web-ext
+Official documentation can be found here: [Getting started with web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext)
+
+1. Install web-ext using the following command: `npm-install --global web-ext`
+1. Run Firefox with add-on temporarily installed:
+    * Firefox Desktop: `web-ext run`
+    * Firefox for Android: `web-ext run --target=firefox-android --android-device=XXX`
+
+#### Method 2: Temporary Add-on
 Official documentation can be found here: [Temporary Installation in Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Temporary_Installation_in_Firefox).
 
 1. Open Firefox and enter "about:debugging" in the URL bar.
